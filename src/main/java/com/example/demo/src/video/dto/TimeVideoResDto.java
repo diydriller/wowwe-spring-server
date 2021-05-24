@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 @Data
 public class TimeVideoResDto {
 
-    private Long Videoid;
+    private Long videoId;
     private String videoImg;
     private String videoTitle;
     private int videoLength;
@@ -20,14 +20,14 @@ public class TimeVideoResDto {
 
     private UserDto userDto;
 
-    public TimeVideoResDto(Long videoid, String videoImg, String videoTitle, LocalDateTime createdAt, Long userId, String userName) {
+    public TimeVideoResDto(Long videoid, String videoImg, String videoTitle, LocalDateTime createdAt, Long userId, String userName, String profileImg) {
 
-        this.Videoid = videoid;
+        this.videoId = videoid;
         this.videoImg = videoImg;
         this.videoTitle = videoTitle;
         this.createdAt = createdAt;
 
-        this.userDto = new UserDto(userId, userName);
+        this.userDto = new UserDto(userId, userName, profileImg);
 
     }
 

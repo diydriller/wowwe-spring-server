@@ -62,7 +62,7 @@ public class VideoController {
 
     //비디오 업로드
     @ResponseBody
-    @PostMapping("/upload")
+    @PostMapping("/video/upload")
     public BaseResponse upload(@RequestParam("file") MultipartFile file,
                                VideoUploadReqDto videoUploadReqDto) throws BaseException{
         try{

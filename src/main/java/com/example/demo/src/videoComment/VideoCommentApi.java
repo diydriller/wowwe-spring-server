@@ -44,7 +44,7 @@ public class VideoCommentApi {
 
         VideoComment temp = videoCommentService.save(new VideoComment(user1, video1, comment));
         VideoCommentDto temp2 = new VideoCommentDto(temp.getId(), temp.getComment(), temp.getCreatedTime());
-        UserDto userDto = new UserDto(userId, user1.getName());
+        UserDto userDto = new UserDto(userId, user1.getName(), user1.getProfileImg());
 
         VideoCommentResDto videoCommentResDto = new VideoCommentResDto(videoId, temp2, userDto);
 

@@ -53,6 +53,14 @@ public class VideoLikeService {
     }
 
     @Transactional
+    public void videoUnlike(Long userId, Long videoId) {
+
+        VideoLike videoLike = videoLikeRepository.findByuserIdAndvideoId(videoId,userId);
+
+        videoLikeRepository.delete(videoLike);
+    }
+
+    @Transactional
     public int checkVideoLikeCount(Long videoId) {
         int videoLikesById = videoLikeRepository.findVideoLikesById(videoId);
 

@@ -74,7 +74,7 @@ class VideoLikeRepositoryTest {
 
         // 뭐냐 아예 객체 보내고 내부에서 처리하는 게 훨씬 낫겠다 너무 귀찮다
         Page<TopLikeVideoResDto> apiDto = page.map(vl -> new TopLikeVideoResDto(vl.getVideo().getId(),
-                vl.getVideo().getThumnailImg(), vl.getVideo().getTitle(), vl.getVideo().getCreatedTime(), videoLikeRepository.findVideoLikesById(vl.getVideo().getId()), vl.getUser().getId(), vl.getUser().getName()));
+                vl.getVideo().getThumnailImg(), vl.getVideo().getTitle(), vl.getVideo().getCreatedTime(), videoLikeRepository.findVideoLikesById(vl.getVideo().getId()), vl.getUser().getId(), vl.getUser().getName(), vl.getUser().getProfileImg()));
 
         List<VideoLike> content = page.getContent();
 

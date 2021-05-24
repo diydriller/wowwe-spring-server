@@ -31,18 +31,18 @@ public class TopLikeVideoResDto {
         this.createdAt = vl.getVideo().getCreatedTime();
         this.likes = likes;
 
-        this.userDto =  new UserDto(vl.getUser().getId(), vl.getUser().getName());
+        this.userDto = new UserDto(vl.getUser().getId(), vl.getUser().getName(), vl.getUser().getProfileImg());
 
     }
 
-    public TopLikeVideoResDto(Long videoid, String videoImg, String videoTitle, LocalDateTime createdAt, int likes, Long userId, String userName) {
+    public TopLikeVideoResDto(Long videoid, String videoImg, String videoTitle, LocalDateTime createdAt, int likes, Long userId, String userName, String profileImg) {
 
         this.videoid = videoid;
         this.videoImg = videoImg;
         this.videoTitle = videoTitle;
         this.createdAt = createdAt;
         this.likes = likes;
-        this.userDto = new UserDto(userId, userName);
+        this.userDto = new UserDto(userId, userName, profileImg);
 
     }
 

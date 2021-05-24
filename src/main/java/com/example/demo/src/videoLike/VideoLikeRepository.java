@@ -21,4 +21,6 @@ public interface VideoLikeRepository extends JpaRepository<VideoLike, Long> {
     @Query("select count(vl) from VideoLike vl where vl.video.id = :id")
     public int findVideoLikesById(@Param("id") Long id);
 
+    @Query("select vl from VideoLike vl where vl.video.id = :videoId and vl.user.id = :userId")
+    public VideoLike findByuserIdAndvideoId(@Param("videoId") Long videoId, @Param("userId") Long userId);
 }

@@ -1,0 +1,29 @@
+#.Travis.yml
+
+language: java
+jdk:
+  - openjdk8
+
+branches:
+  only:
+    - chang
+
+# Travis CI 서버의 Home
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.gradle'
+
+script: "./gradlew clean build"
+script:
+ - chmod +x ./gradlew build connectedCheck
+  
+# before_install:
+#   - chomod +x gradlew
+
+
+#CI 실행 완료 시 메일로 알람
+notifications:
+  email:
+    recipients:
+      - aowert6518@naver.com

@@ -20,7 +20,7 @@ class UserControllerTest {
     @Test
     public void 회원가입() {
 
-
+        System.out.println();
     }
 
 }

@@ -39,6 +39,10 @@ public class VideoService {
     }
 
 
+    @Transactional
+    public void delete(Video video) {
+        videoRepository.delete(video);
+    }
 
 
 
@@ -58,7 +62,7 @@ public class VideoService {
 
         Page<Video> page = videoRepository.findAll(pageRequest);
 
-        Page<TimeVideoResDto> apiDto = page.map(v -> new TimeVideoResDto(v.getId(), v.getThumnailImg(), v.getTitle(), v.getCreatedTime(), v.getUser().getId(), v.getUser().getName()));
+        Page<TimeVideoResDto> apiDto = page.map(v -> new TimeVideoResDto(v.getId(), v.getThumnailImg(), v.getTitle(), v.getCreatedTime(), v.getUser().getId(), v.getUser().getName(), v.getUser().getProfileImg()));
 
         return apiDto;
     }
